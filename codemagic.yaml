@@ -1,0 +1,12 @@
+workflows:
+  android-workflow:
+    name: Android Workflow
+    max_build_duration: 60
+    environment:
+      vars:
+        GRADLEW_PATH: "./gradlew"
+    scripts:
+      - echo "Running Android build"
+      - $GRADLEW_PATH assembleDebug
+    artifacts:
+      - build/**/outputs/**/*.apk
